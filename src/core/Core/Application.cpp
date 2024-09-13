@@ -16,8 +16,8 @@ Application::Application(const std::string& title) {
   APP_PROFILE_FUNCTION();
 
   const unsigned int init_flags{SDL_INIT_VIDEO | SDL_INIT_TIMER | SDL_INIT_GAMEPAD};
-  if (SDL_Init(init_flags) != 0) {
-    APP_ERROR("Error: %s\n", SDL_GetError());
+  if (!SDL_Init(init_flags)) {
+    APP_ERROR("Error on SDL_Init(): %s\n", SDL_GetError());
     m_exit_status = ExitStatus::FAILURE;
   }
 
@@ -25,8 +25,6 @@ Application::Application(const std::string& title) {
   SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
   SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
   SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 1);
-
-  SDL_SetHint(SDL_HINT_IME_SHOW_UI, "1");
 
   m_window = std::make_unique<Window>(Window::Settings{title});
 }
