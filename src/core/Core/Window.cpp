@@ -69,7 +69,7 @@ Window::Window(const Settings& settings)
 Window::~Window() {
   APP_PROFILE_FUNCTION();
 
-  SDL_GL_DeleteContext(m_gl_context);
+  SDL_GL_DestroyContext(m_gl_context);
   SDL_DestroyWindow(m_window);
 
   ImGui_ImplOpenGL3_Shutdown();
@@ -100,7 +100,7 @@ void Window::update() {
       if (ImGui::BeginMenu("View")) {
         ImGui::MenuItem("Some Panel", nullptr, &m_show_some_panel);
         ImGui::MenuItem("ImGui Demo Panel", nullptr, &m_show_demo_panel);
-        ImGui::MenuItem("Debug Panel", nullptr, &m_show_debug_panel);
+        ImGui::MenuItem("Debug Panels", nullptr, &m_show_debug_panel);
         ImGui::EndMenu();
       }
 
@@ -121,7 +121,10 @@ void Window::update() {
 
     // Debug panel
     if (m_show_debug_panel) {
-      ImGui::Begin("Debug panel", &m_show_debug_panel);
+      ImGui::ShowMetricsWindow();
+      ImGui::ShowDebugLogWindow();
+
+      ImGui::Begin("App debug panel", &m_show_debug_panel);
       ImGui::Text("User config path: %s", m_user_config_path.c_str());
       ImGui::Text("Global font scaling %f", io.FontGlobalScale);
       ImGui::End();
