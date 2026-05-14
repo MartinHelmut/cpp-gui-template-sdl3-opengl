@@ -69,7 +69,7 @@ Window::Window(const Settings& settings)
 Window::~Window() {
   APP_PROFILE_FUNCTION();
 
-  SDL_GL_DeleteContext(m_gl_context);
+  SDL_GL_DestroyContext(m_gl_context);
   SDL_DestroyWindow(m_window);
 
   ImGui_ImplOpenGL3_Shutdown();
