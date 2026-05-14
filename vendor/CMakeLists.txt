@@ -5,13 +5,13 @@ include(FetchContent)
 FetchContent_Declare(
   doctest
   GIT_REPOSITORY "https://github.com/onqtam/doctest.git"
-  GIT_TAG v2.4.11
+  GIT_TAG v2.5.2
 )
 
 FetchContent_Declare(
   fmt
   GIT_REPOSITORY "https://github.com/fmtlib/fmt.git"
-  GIT_TAG 10.2.1
+  GIT_TAG 12.1.0
 )
 
 FetchContent_Declare(
@@ -23,19 +23,19 @@ FetchContent_Declare(
 FetchContent_Declare(
   imgui
   GIT_REPOSITORY "https://github.com/ocornut/imgui.git"
-  GIT_TAG 085781f5ca5372d5fc804d7e44b5bf27a8994af7 # Branch: docking, date: 19.03.2024, 06:52 GMT+1
+  GIT_TAG v1.92.8-docking
 )
 
 FetchContent_Declare(
   SDL3
   GIT_REPOSITORY "https://github.com/libsdl-org/SDL.git"
-  GIT_TAG prerelease-3.1.1
+  GIT_TAG release-3.4.8
 )
 
 FetchContent_Declare(
   spdlog
   GIT_REPOSITORY "https://github.com/gabime/spdlog.git"
-  GIT_TAG v1.13.0
+  GIT_TAG v1.17.0
 )
 
 # Settings
