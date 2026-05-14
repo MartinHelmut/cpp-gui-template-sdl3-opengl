@@ -1,6 +1,5 @@
 FetchContent_GetProperties(imgui)
 if (NOT imgui_POPULATED)
-  #FetchContent_Populate(imgui)
   FetchContent_MakeAvailable(imgui)
 endif ()
 
