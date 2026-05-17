@@ -16,7 +16,7 @@ FetchContent_Declare(
 
 FetchContent_Declare(
   glad
-  GIT_REPOSITORY "https://github.com/krieselreihe/glad.git"
+  GIT_REPOSITORY "https://github.com/MartinHelmut/glad.git"
   GIT_TAG v1.0.0
 )
 
